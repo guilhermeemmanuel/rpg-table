@@ -1,0 +1,22 @@
+{
+  "name": "angular1-base",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "1.5.4",
+    "del": "2.0.2",
+    "ecstatic": "1.0.1",
+    "gulp": "3.9.1",
+    "gulp-bower": "0.0.10",
+    "gulp-concat": "2.6.1",
+    "gulp-processhtml": "1.1.0",
+    "gulp-rename": "1.2.2",
+    "gulp-replace": "0.5.4",
+    "gulp-rev": "6.0.1",
+    "gulp-sass": "3.1.0",
+    "gulp-util": "3.0.8",
+    "main-bower-files": "2.9.0",
+    "mkdirp": "0.5.1",
+    "path": "0.12.7"
+  }
+}
