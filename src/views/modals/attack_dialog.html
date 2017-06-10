@@ -1,0 +1,127 @@
+<md-dialog aria-label="Attack" style="width: 400">
+	<div class="md-toolbar-tools">
+		<p class="text-blue">
+			Attack
+		</p>
+	</div>
+	<form>
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<div layout="column">
+					<div layout="row">
+						<p class="bold">
+							Bonus Calculation
+						</p>
+						<md-button ng-click="ctrl.calculateFirstResponse()">
+							Calculate
+						</md-button>
+						<p ng-bind="ctrl.firstResponse"></p>
+					</div>
+					<div layout="row">
+						<div layout="row">
+							<md-input-container>
+								<label>Value</label>
+								<input type="number" ng-model="ctrl.value"/>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container>
+								<label>Bonus (%)</label>
+								<input type="number" ng-model="ctrl.bonus"/>
+							</md-input-container>
+						</div>
+					</div>
+					
+					<div layout="row">
+						<div layout="column" flex="50">
+							<div>
+								<p class="bold">
+									Atacker
+								</p>
+							</div>
+							<div layout="row">
+								<md-input-container>
+									<label>SKILL</label>
+									<input type="number" ng-model="ctrl.skill"/>
+								</md-input-container>
+							</div>
+							<div layout="row">
+								<md-input-container>
+									<label>D20</label>
+									<input type="number" ng-model="ctrl.hitDice"/>
+								</md-input-container>
+							</div>
+							<div layout="row">
+								<md-button ng-click="ctrl.calculateHit()">
+									Calculate
+								</md-button>
+								<p ng-bind="ctrl.hit"></p>
+							</div>
+						</div>
+						<div layout="column" flex="50">
+							<div>
+								<p class="bold">
+									Defender
+								</p>
+							</div>
+							<div layout="row">
+								<md-input-container>
+									<label>VEL</label>
+									<input type="number" ng-model="ctrl.vel"/>
+								</md-input-container>
+							</div>
+							
+							<div layout="row">
+								<md-input-container>
+									<label>D6</label>
+									<input type="number" ng-model="ctrl.evadeDice"/>
+								</md-input-container>
+							</div>
+
+						</div>
+					</div>
+					<div layout="row">
+						<div layout="column" flex="50">
+							<div layout="row">
+								<md-input-container>
+									<label>STR</label>
+									<input type="number" ng-model="ctrl.str"/>
+								</md-input-container>
+							</div>
+							<div layout="row">
+								<md-input-container>
+									<label>Weapon</label>
+									<input type="number" ng-model="ctrl.weapon"/>
+								</md-input-container>
+							</div>
+							<div layout="row">
+								<md-button ng-click="ctrl.calculateDamage()">
+									Calculate
+								</md-button>
+								<p ng-bind="ctrl.damage"></p>
+							</div>
+						</div>
+						<div layout="column" flex="50">
+							<div layout="row">
+								<md-input-container>
+									<label>RES</label>
+									<input type="number" ng-model="ctrl.res"/>
+								</md-input-container>
+							</div>
+							
+							<div layout="row">
+								<md-input-container>
+									<label>Armor</label>
+									<input type="number" ng-model="ctrl.armor"/>
+								</md-input-container>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</md-dialog-content>
+	</form>
+</md-dialog>

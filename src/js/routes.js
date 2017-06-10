@@ -10,7 +10,12 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   })
   .state('base', {
     name: 'base',
-    url: '/base',
+    url: '/base?master',
       templateUrl: 'views/base.html'
+  })
+  .state('classes', {
+    name: 'classes',
+    url: '/classes',
+      templateUrl: 'views/classes.html'
   })
 });

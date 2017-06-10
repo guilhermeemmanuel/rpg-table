@@ -1,0 +1,93 @@
+<md-dialog aria-label="Player" style="width: 400">
+	<div class="md-toolbar-tools">
+		<p class="text-blue">
+			Character
+		</p>
+	</div>
+	<form>
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<div layout="row">
+					<md-input-container flex="35">
+						<label>Nome</label>
+						<input ng-model="ctrl.player.name"/>
+					</md-input-container>
+					<md-input-container flex="25">
+						<label>Current HP</label>
+						<input type="number" ng-model="ctrl.player.current_hp"/>
+					</md-input-container>
+					<md-input-container flex="25">
+						<label>Max HP</label>
+						<input type="number" ng-model="ctrl.player.max_hp"/>
+					</md-input-container>
+					<md-input-container flex="15">
+						<label>Level</label>
+						<input ng-model="ctrl.player.level"/>
+					</md-input-container>
+				</div>
+				<div layout="row">
+					<md-input-container flex="25">
+						<label>Gold</label>
+						<input type="number" ng-model="ctrl.player.gold"/>
+					</md-input-container>
+					<md-input-container flex="25">
+						<label>XP</label>
+						<input type="number" ng-model="ctrl.player.xp"/>
+					</md-input-container>
+					<md-input-container flex="25">
+						<label>Current AP</label>
+						<input type="number" ng-model="ctrl.player.current_ap"/>
+					</md-input-container>
+					<md-input-container flex="25">
+						<label>Max AP</label>
+						<input type="number" ng-model="ctrl.player.max_ap"/>
+					</md-input-container>
+
+				</div>
+				<div layout="row">
+					<md-input-container flex="50">
+						<label>Raça</label>
+						<input ng-model="ctrl.player.race"/>
+					</md-input-container>
+					<md-input-container flex="50">
+						<label>Classe</label>
+						<input ng-model="ctrl.player.class"/>
+					</md-input-container>
+				</div>
+				<div layout="row">
+					<md-input-container flex="30">
+						<label>STR</label>
+						<input type="number" ng-model="ctrl.player.str"/>
+					</md-input-container>
+					<md-input-container flex="30">
+						<label>RES</label>
+						<input type="number" ng-model="ctrl.player.res"/>
+					</md-input-container>
+					<md-input-container flex="30">
+						<label>VEL</label>
+						<input type="number" ng-model="ctrl.player.vel"/>
+					</md-input-container>
+				</div>
+				<div layout="row">
+					<md-input-container flex="30">
+						<label>SKILL</label>
+						<input type="number" ng-model="ctrl.player.skl"/>
+					</md-input-container>
+					<md-input-container flex="30">
+						<label>INT</label>
+						<input type="number" ng-model="ctrl.player.int"/>
+					</md-input-container>
+					<md-input-container flex="30">
+						<label>CAR</label>
+						<input type="number" ng-model="ctrl.player.car"/>
+					</md-input-container>
+				</div>
+				<div layout="row" layout-align="center">
+					<md-button ng-click="ctrl.savePlayer()">
+						SAVE
+					</md-button>
+				</div>
+			</div>
+		</md-dialog-content>
+	</form>
+</md-dialog>

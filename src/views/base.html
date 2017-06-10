@@ -1,3 +1,160 @@
-<div>
-	Base
-</div>
+<md-content ng-controller="BaseCtrl as ctrl" class="transparent">
+	<div layout="column" >
+		<div layout="row" layout-align="center">
+			<p class="bold super-title">
+				Personagens
+			</p>
+		</div>
+		<div layout="row" layout-align="center">
+			<md-button class="md-fab md-primary md-mini" aria-label="Attack" ng-click="ctrl.openAttackModal()" ng-show="ctrl.master">
+				<i class="mdi mdi-sword"></i>
+			</md-button>
+		</div>
+		<div layout="row">
+			<div layout="column" flex="50" style="margin-right: 10px">
+				<div layout="row" layout-align="center">
+				<p class="bold title text-blue">
+					Jogadores
+				</p>
+				<md-button class="md-fab md-primary md-mini margin-top-15" aria-label="Player Plus" ng-click="ctrl.savePlayerModal()">
+					<i class="mdi mdi-plus mdi-18px"></i>
+				</md-button>
+				</div>
+				<md-list class="margin-left-15">
+					<md-list-item ng-show="ctrl.master || player.activated" class="md-3-line" ng-repeat="player in ctrl.players" style=" border: inset 1px indigo; margin-bottom: 10px; border-radius: 5px; padding: 5px" >
+						<div layout="column"  flex="90" ng-click="ctrl.savePlayerModal(player)">
+							<div layout="row">
+								<div flex="35" class="bold sub-title">
+									{{player.name}}
+								</div>
+								<div flex="10">
+									Lv. {{player.level}}
+								</div>
+								<div flex="15">
+									HP: {{player.current_hp + "/" + player.max_hp}}
+								</div>
+								<div flex="40" class="bold text-green">
+									{{player.race + " " + player.class}}
+								</div>
+							</div>
+							<div layout="row">
+								<div flex="15" class="bold">
+									XP:
+								</div>
+								<div flex="15">
+									{{player.xp}}
+								</div>
+								<div flex="15" class="bold">
+									GOLD:
+								</div>
+								<div flex="15">
+									{{player.gold}}
+								</div>
+								<div flex="15" class="bold">
+									AP:
+								</div>
+								<div flex="15">
+									{{player.current_ap + "/" + player.max_ap}}
+								</div>
+								
+							</div>
+							<div layout="row">
+								<div flex="15" class="bold">
+									STR:
+								</div>
+								<div flex="15">
+									{{player.str}}
+								</div>
+								<div flex="15" class="bold">
+									RES:
+								</div>
+								<div flex="15">
+									{{player.res}}
+								</div>
+								<div flex="15" class="bold">
+									VEL:
+								</div>
+								<div flex="15">
+									{{player.vel}}
+								</div>
+							</div>	
+							<div layout="row">
+								<div flex="15" class="bold">
+									SKILL:
+								</div>
+								<div flex="15">
+									{{player.skl}} 
+								</div>
+								<div flex="15" class="bold">
+									INT:
+								</div>
+								<div flex="15">
+									{{player.int}}
+								</div>
+								<div flex="15" class="bold">
+									CAR:
+								</div>
+								<div flex="15">
+									{{player.car}}
+								</div>
+							</div>	
+						</div>
+						<div layout="column" flex="10">
+							<md-button class="md-fab md-primary md-mini" aria-label="Player Plus" ng-click="ctrl.deletePlayer(player)" >
+								<i class="mdi mdi-close"></i>
+							</md-button>
+							<md-button class="md-fab md-primary md-mini" aria-label="Player Activate" ng-click="ctrl.activatePlayer(player)" ng-show="ctrl.master && !player.activated">
+								<i class="mdi mdi-flash"></i>
+							</md-button>
+							<md-button class="md-fab md-primary md-mini" aria-label="Player Deactivate" ng-click="ctrl.deactivatePlayer(player)" ng-show="ctrl.master && player.activated">
+								<i class="mdi mdi-flash-off"></i>
+							</md-button>
+						</div>
+					</md-list-item>
+				</md-list>
+			</div>
+			<div layout="column" flex="50" style="margin-right: 10px">
+				<div layout="row" layout-align="center">
+					<p class="bold title text-red">
+						Inimigos
+					</p>
+					<md-button class="md-fab md-mini margin-top-15" aria-label="Enemy Plus"ng-click="ctrl.saveEnemyModal()" ng-show="ctrl.master">
+						<i class="mdi mdi-plus"></i>
+					</md-button>
+				</div>
+				<md-list >
+					<md-list-item class="md-3-line" ng-show="ctrl.master || enemy.activated" ng-repeat="enemy in ctrl.enemies" style=" border: inset 1px indigo; margin-bottom: 10px; border-radius: 5px; padding: 5px">
+						<div layout="column"  flex="90"  ng-click="ctrl.master && ctrl.saveEnemyModal(enemy)" >
+							<div layout="row">
+								<div flex="35" class="bold sub-title">
+									{{enemy.name}}
+								</div>
+								<div flex="15">
+									Lv. {{enemy.level}}
+								</div>
+								<div flex="25">
+									HP: {{enemy.current_hp + "/" + enemy.max_hp}}
+								</div>
+							</div>
+						</div>
+						<div layout="column"  flex="10">
+							<md-button class="md-fab md-primary md-mini" aria-label="Enemy Plus" ng-click="ctrl.deleteEnemy(enemy)" >
+								<i class="mdi mdi-close"></i>
+							</md-button>
+							<md-button class="md-fab md-primary md-mini" aria-label="Enemy Activate" ng-click="ctrl.activateEnemy(enemy)" ng-show="ctrl.master&& !enemy.activated">
+								<i class="mdi mdi-flash"></i>
+							</md-button>
+							<md-button class="md-fab md-primary md-mini" aria-label="Enemy Deactivate" ng-click="ctrl.deactivateEnemy(enemy)" ng-show="ctrl.master && enemy.activated">
+								<i class="mdi mdi-flash-off"></i>
+							</md-button>
+							<md-button class="md-fab md-primary md-mini" aria-label="Enemy Clone" ng-click="ctrl.cloneEnemy(enemy)" ng-show="ctrl.master">
+								<i class="mdi mdi-content-copy"></i>
+							</md-button>
+						</div>
+					</md-list-item>
+				</md-list>
+			</div>
+
+		</div>
+	</div>
+</md-content>
